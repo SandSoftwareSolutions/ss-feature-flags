@@ -1,0 +1,15 @@
+{
+  "name": "@sandsoftwaresolutions/feature-flags",
+  "version": "0.1.0",
+  "description": "Deterministic, dependency-free feature flags for JavaScript and TypeScript.",
+  "type": "module",
+  "exports": { ".": { "types": "./src/index.d.ts", "import": "./src/index.js" } },
+  "files": ["src", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "engines": { "node": ">=18" },
+  "scripts": { "test": "node --test", "pack:check": "npm pack --dry-run" },
+  "keywords": ["feature-flags", "experiments", "rollout", "ab-testing"],
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/SandSoftwareSolutions/ss-feature-flags.git" },
+  "publishConfig": { "access": "public" }
+}
