@@ -10,6 +10,8 @@ Predictable, edge-friendly feature flags without a database or external service.
 npm install @sandsoftwaresolutions/feature-flags
 ```
 
+Works with `import` and `require()`, and ships TypeScript types for both.
+
 ## Usage
 
 ```js

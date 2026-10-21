@@ -1,15 +1,50 @@
 {
   "name": "@sandsoftwaresolutions/feature-flags",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Deterministic, dependency-free feature flags for JavaScript and TypeScript.",
   "type": "module",
-  "exports": { ".": { "types": "./src/index.d.ts", "import": "./src/index.js" } },
-  "files": ["src", "README.md", "LICENSE"],
+  "main": "./dist/index.cjs",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./src/index.d.ts",
+        "default": "./src/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "src",
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "sideEffects": false,
-  "engines": { "node": ">=18" },
-  "scripts": { "test": "node --test", "pack:check": "npm pack --dry-run" },
-  "keywords": ["feature-flags", "experiments", "rollout", "ab-testing"],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test && node scripts/build-cjs.mjs --check",
+    "pack:check": "npm pack --dry-run",
+    "build": "node scripts/build-cjs.mjs",
+    "prepack": "node scripts/build-cjs.mjs"
+  },
+  "keywords": [
+    "feature-flags",
+    "experiments",
+    "rollout",
+    "ab-testing"
+  ],
   "license": "MIT",
-  "repository": { "type": "git", "url": "git+https://github.com/SandSoftwareSolutions/ss-feature-flags.git" },
-  "publishConfig": { "access": "public" }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandSoftwareSolutions/ss-feature-flags.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
